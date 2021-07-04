@@ -1,0 +1,36 @@
+{
+  "name": "agenda-telefonica",
+  "version": "1.0.0",
+  "description": "Proyecto para evaluación de entrevista de trabajo (Agenda Telefonica).",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "start": "concurrently \"npm run dev \" \"npm run watch \" ",
+    "watch": "webpack -w --mode development"
+  },
+  "author": "Marco Antonio Perez",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "concurrently": "^6.2.0",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.0",
+    "multer": "^1.4.2",
+    "mysql2": "^2.2.5",
+    "pug": "^3.0.2",
+    "sequelize": "^6.6.4",
+    "shortid": "^2.2.16",
+    "slug": "^5.1.0",
+    "sweetalert2": "^11.0.18"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "babel-loader": "^8.2.2",
+    "nodemon": "^2.0.9",
+    "webpack": "^5.42.0",
+    "webpack-cli": "^4.7.2"
+  }
+}

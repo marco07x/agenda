@@ -1,0 +1,15 @@
+extends layout
+
+block contenido
+    .contenido-principal
+        h1 #{nombrePagina} - #{contacto.nombre}
+
+
+    
+
+
+
+    //Acciones que se pueden realizar
+    .contenedor-acciones
+        a(href=`/contacto/editar/${contacto.id}` class="boton") Editar Contacto
+        button#eliminar-contacto(data-contacto-url=contacto.url type="button" class="boton eliminar") Eliminar Contacto 

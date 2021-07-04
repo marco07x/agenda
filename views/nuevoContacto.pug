@@ -1,0 +1,14 @@
+extends layout
+
+include  mixins/crearContacto
+
+block contenido
+    .contenido-principal
+        h1 #{nombrePagina}
+
+        pre= vardump(contacto)
+
+        if errores 
+            each error in errores
+                .alerta= error.msg
+        +crearContacto(contacto)

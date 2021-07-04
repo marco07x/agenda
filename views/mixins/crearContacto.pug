@@ -1,0 +1,19 @@
+mixin crearContacto(contacto = {})
+    form.agregar-proyecto(action=`/nuevo-contacto/${contacto.id || ''}` method="POST" )
+        .campo
+            label(for="nombre") Nombre: 
+            input(value=contacto.nombre type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre")
+        .campo
+            label(for="apellidoPaterno") Apellido Paterno: 
+            input(value=contacto.apellidoPaterno type="text" id="apellidoPaterno" name="apellidoPaterno" placeholder="Ingresa tu apellido paterno")
+        .campo
+            label(for="apellidoMaterno") Apellido Materno: 
+            input(value=contacto.apellidoMaterno type="text" id="apellidoMaterno" name="apellidoMaterno" placeholder="Ingresa tu apellido materno")
+        .campo
+            label(for="telefono") Telefono: 
+            input(value=contacto.telefono type="text" id="telefono" name="telefono" placeholder="Ingresa el numero de telefono")
+        .campo
+            label(for="correo") Correo: 
+            input(value=contacto.correo type="email" id="correo" name="correo" placeholder="Ingresa el correo electronico")
+        .campo.enviar
+            input(type="submit" value=`${contacto.nombre ? 'Guardar' : 'Agregar'}` class="boton")
