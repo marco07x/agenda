@@ -1,31 +1,7 @@
 const { validationResult } = require('express-validator');
 const Contactos = require('../models/Contactos');
 const slug = require('slug');
-/*const multer = require('multer');
 
-exports.subirImagen = (req, res, next) => {
-    upload(req, res, function(error) {
-        if(error instanceof multer.MulterError) {
-            return next()
-        }
-    });
-    next();
-}*/
-//Opciones de Multer
-/*const configuracionMulter = {
-    storage: fileStorage = multer.diskStorage({
-        destination : (req, file, cb) => {
-            cb(null, __dirname+'../../public/uploads');
-        },
-        filename : (req, file, cb) => {
-            cb(null, file);
-            console.log(file);
-        }
-    })
-}
-
-const upload = multer(configuracionMulter).single('imagen');
-*/
 exports.contactosLista = async (req, res) => {
     //Mostrar contactos
     const contactos = await Contactos.findAll();
@@ -62,12 +38,7 @@ exports.nuevoContacto = async (req, res) => {
         res.render('nuevoContacto', {
             errores: error.errors,
             nombrePagina : 'Nuevo Contacto',
-            contactos,
-            nombre,
-            apellidoPaterno,
-            apellidoMaterno,
-            telefono,
-            correo
+            contactos
         });
     }
 }

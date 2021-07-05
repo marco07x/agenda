@@ -9,7 +9,7 @@ block contenido
             if(contactos.length)
                 each contacto in contactos
                     li Nombre
-                        p= contacto.nombre
+                        a(href=`/contactos/${contacto.url}`)= contacto.nombre
                     li Apellido Paterno
                         p= contacto.apellidoPaterno
                     li Apellido Materno 
