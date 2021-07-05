@@ -13,30 +13,53 @@ const Contactos = db.define('contactos', {
         type: Sequelize.STRING
     },
     nombre : {
-        type : Sequelize.STRING
+        type : Sequelize.STRING(50),
+        validate: {
+            notEmpty: {
+                msg: 'El nombre no puede ir vacio'
+            }
+        }
     },
     apellidoPaterno : {
-        type : Sequelize.STRING
+        type : Sequelize.STRING(50),
+        validate: {
+            notEmpty: {
+                msg: 'El apellido paterno no puede ir vacio'
+            }
+        }
     },
     apellidoMaterno : {
-        type : Sequelize.STRING
+        type : Sequelize.STRING(50)
     },
     telefono : {
-        type : Sequelize.STRING
+        type : Sequelize.NUMBER,
+        validate: {
+            notEmpty: {
+                msg: 'El numero de telefono no puede ir vacio'
+            },
+            isNumeric: true,
+        },
+        unique: {
+            args: true,
+            msg: 'El numero ya se ha registrado'
+        }
     },
     correo : {
         type : Sequelize.STRING,
         validate: {
+            notEmpty: {
+                msg: 'El correo no puede ir vacio'
+            },
             isEmail: {
                 msg : 'Agrega un correo valido'
             }
         },
         unique: {
             args: true,
-            msg: 'Correo ya registrado'
+            msg: 'El Correo ya se ha registrado'
         }
     },
-    foto : {
+    imagen : {
         type : Sequelize.STRING
     }
 }, {

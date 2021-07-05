@@ -1,3 +1,4 @@
+include  mixins/crearContacto 
 <!DOCTYPE html>
 html(lang="en")
     head
@@ -12,20 +13,20 @@ html(lang="en")
             h1 Agenda de Numeros Telefonicos
 
         main.contenedor
-            aside.contenedor-proyectos
-                .panel.crear-proyecto 
+            aside.contenedor-contactos
+                .panel.crear-contacto 
                     a(href="/nuevo-contacto" class="boton") Nuevo Contacto
                         span +
-                .panel.lista-proyectos
+                .panel.lista-contactos
                     h2 Contactos 
-                    ul#proyectos.proyectos 
+                    ul#contactos.proyectos 
                         if(contactos.length)
                             each contacto in contactos
                                 li
                                     a(href=`/contactos/${contacto.url}`)= contacto.nombre
                                     p= contacto.telefono
-
+   
             block contenido
-                
+        
             //pre= vardump(contactos)
         script(src="/dist/bundle.js")

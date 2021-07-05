@@ -6,32 +6,8 @@ html {
 }
 body {
     font-family: 'Lato', sans-serif;
-    min-height: 100vh;
 }
-/** Login **/
-.login,
-.crear-cuenta {
-    background: #455A64;
-}
-.contenedor-formulario {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-}
-.contenedor-formulario h1 {
-    text-align: center;
-    color: white;
-}
-.contenedor-formulario h1  span{
-    font-weight: 400;
-    font-size: 1.2rem;
-}
-.contenedor-formulario p {
-    text-align: center;
-    color: white;
-    font-size: 1.4rem;
-}
+/*Campos*/
 .campo {
     display: flex;
     margin-bottom: 1rem;
@@ -44,15 +20,17 @@ body {
 }
 .campo input[type="email"],
 .campo input[type="text"],
+.campo input[type="number"],
 .campo input[type="password"] {
     height: 3rem;
     border: 0;
     flex: 1;
-    border: 1px solid #455A64;
+    border: 1px solid #1687A7;
     border-radius: 5rem;
     padding-left: 2rem;
     color: black;
 }
+
 .campo.acciones {
     justify-content: space-between;
 }
@@ -60,38 +38,40 @@ body {
    justify-content: flex-end;
 }
 .boton {
-    background-color: #FDD835;
+    background-color: #F6F5F5;
     text-align: center;
     transition: background-color .5s ease-in-out;
-    padding: 2rem;
+    padding: 1rem;
     text-transform: uppercase;
     border: none;
-    font-weight: 900;
-    width: 250px;
+    font-weight: 600;
+    width: 100px;
     margin:0  auto;
-    display: flex;
     align-items: center;
-    line-height: 0;
 }
-.boton span {
-    font-size: 2.2rem;
-    margin-left: 20px;
+a {
+    text-decoration: none;
 }
-
 .boton:hover {
     cursor: pointer;
-    background-color: rgb(219, 184, 29)!important;
+    background-color: #fff!important;
+}
+.boton.editar {
+    margin-top: 1rem;
+    float: left;
+    display: flex;
+    background-color: #D3E0EA!important;
+    color: #455A64;
+    width: 250px;
 }
 .boton.eliminar {
     margin-top: 1rem;
     float: right;
-    background-color: red!important;
+    display: flex;
+    background-color: #1687A7!important;
     color: white;
     width: 250px;
-}
-.campo a {
-    color: black;
-    text-decoration: none;
+    align-items: center;
 }
 
 /** Barra **/
@@ -99,7 +79,7 @@ body.index {
     height: 100vh;
 }
 .barra {
-    background-color: #455A64;
+    background-color: #1687A7;
     padding: 1rem;
     height: 60px;
     display: flex;
@@ -110,16 +90,21 @@ body.index {
     color: white;
     margin:0;
     font-size: 1.4rem;
+    text-align: center;
+    align-items: center;
 }
 .barra a {
     color: white;
     text-decoration: none;
+    text-align: center;
+    align-items: center;
 }
 /*** sidebar**/
-.contenedor-proyectos {
+
+.contenedor-contactos {
     height: 100%;
     max-width: 300px;
-    background-color: #607D8B;
+    background-color: #D3E0EA;
     padding-top: 1rem;
 }
 .panel {
@@ -127,40 +112,52 @@ body.index {
     margin: 1rem;
 }
 .panel a {
-    color: white;
+    color: #455A64;
     font-weight: bold;
     text-decoration: none;
 }
 .panel h2 {
-    color: #FDD835;
+    color: #276678;
     font-weight: 900;
     text-align: center;
     font-size: 2rem;
     margin: 0;
 }
 
-.crear-proyecto i {
+.crear-contacto i {
     margin-left: 1rem;
 }
-.crear-proyecto a {
+.crear-contacto a {
     color: #455A64;
 }
 
-.lista-proyectos ul{
+.lista-contactos ul{
     list-style: none;
     padding: 1.5rem 0 0 0;
     margin: 0;
 }
-.lista-proyectos ul li {
+.lista-contactos ul li {
     margin-bottom: 1rem;
 }
-.lista-proyectos ul li a:hover {
-    color: #FDD835;
+.lista-contactos ul li a:hover {
+    color: #F6F5F5;
+}
+
+li {
+    color: #1687A7;
+    font-weight: 600;
+    list-style: none;
+    
+}
+p{
+    color: black;
 }
 /** Contenido Principal */
+
 .contenedor {
     display: flex;
     height: calc( 100vh - 60px);
+    text-align: center;
 }
 .contenido-principal {
     flex: 1;
@@ -191,38 +188,6 @@ body.index {
     transition: background-color .5s ease-in-out;
 }
 
-/** Listado Pendientes **/
-.listado-pendientes {
-    background-color: #F2F2F2;
-    max-width: 800px;
-    width: 90%;
-    margin: 2rem auto 0 auto;
-    padding: 2rem;
-    border: 1px solid #999;
-}
-.listado-pendientes ul {
-    padding: 0;
-    list-style: none;
-}
-.listado-pendientes ul li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1.4rem;
-    border-bottom: 1px solid #d1d1d1;
-}
-.listado-pendientes ul li:last-of-type {
-    border-bottom: none;
-}
-.listado-pendientes ul li i {
-    cursor: pointer;
-}
-.acciones i:last-child{
-    margin-left: 3rem;
-}
-.completo {
-    color: #00B762;
-}
 .alerta {
     padding: .5rem;
     text-align: center;
@@ -249,46 +214,29 @@ body.index {
     color: green;
 }
 
-/** Linea de Avance **/
-.barra-avance {
-    height: 30px;
-    border: 1px solid #999;
+form.agregar-contacto {
     max-width: 800px;
     width: 90%;
-    margin: 0 auto;
-}
-.porcentaje {
-    width: 0%;
-    height: 100%;
-    background-color: #00B762;
-    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
-    background-size: 1rem 1rem;
-    transition: width .3s ease;
-}
-
-form.agregar-proyecto {
-    max-width: 800px;
-    width: 90%;
-    background-color: #607D8B;
+    background-color: #1687A7;
     margin: 0 auto;
     padding: 2rem;
     color: white;
     transition: background-color .5s ease-in-out;
 }
-form.agregar-proyecto label,
-form.agregar-proyecto input {
+form.agregar-contacto label,
+form.agregar-contacto input {
     display: block;
 }
-form.agregar-proyecto label {
+form.agregar-contacto label {
     flex: 0 0 150px;
     text-align: right;
     padding-right: 1rem;
 }
-form.agregar-proyecto input[type="text"]{
+form.agregar-contacto input[type="text"]{
     width: 100%;
     height: 3rem;
     padding-left: 1rem;
-    border: 1px solid #455A64;
+    border: 1px solid #1687A7;
     border-radius: 5rem;
     color: black;
 }
@@ -296,29 +244,8 @@ form input[type="submit"]{
     margin-top: 1rem;
     text-align: center;
     display: block;
-    padding: 1.5rem;
     color: black;
-    width: auto;
+    width: 100px;
+    height: 50px;
     margin: 0;
-}
-
-.contenedor-acciones {
-    max-width: 800px;
-    margin: 2rem auto 0 auto;
-    width: 90%;
-
-    display: flex;
-    justify-content: space-between;
-}
-.contenedor-acciones .boton:first-of-type{
-    color: black;
-    text-decoration: none;
-}
-.contenedor-acciones .boton.eliminar {
-    color: white;
-}
-.contenedor-acciones .boton {
-    margin: 0;
-    text-align: center;
-    display: block;
 }

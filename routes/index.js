@@ -16,6 +16,7 @@ module.exports = function() {
             check('telefono', 'Ingresa un numero de telefono valido').isNumeric().trim().escape(),
             check('correo', 'El correo electronico no es valido').isEmail()
         ],
+        //contactosController.subirImagen,
     contactosController.nuevoContacto);
 
     //Listar Contactos
@@ -30,7 +31,7 @@ module.exports = function() {
             check('telefono', 'Ingresa un numero de telefono valido').isNumeric().trim().escape(),
             check('correo', 'El correo electronico no es valido').isEmail()
         ],
-    contactosController.actualizarProyecto);
+    contactosController.actualizarContacto);
 
     //Eliminar Contacto
     router.delete('/contactos/:url', contactosController.eliminarContacto);

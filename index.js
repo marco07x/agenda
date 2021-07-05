@@ -3,6 +3,9 @@ const routes = require('./routes');
 const path = require('path');
 const bodyParser = require('body-parser');
 const flash = require('connect-flash');
+//Importar las variables.env
+require('dotenv').config({ path: 'variables.env'})
+
 
 //Helpers con algunas funciones
 const helpers = require('./helpers');
@@ -45,4 +48,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', routes());
 
 //Habilitar un puerto
-app.listen(4120);
+//app.listen(4120);
+
+const host = process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 4120;
+
+app.listen(port, host, () => {
+    console.log('El servidor esta funcionando');
+});

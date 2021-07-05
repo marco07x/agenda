@@ -5,11 +5,21 @@ block contenido
         h1 #{nombrePagina} - #{contacto.nombre}
 
 
-    
+        ul#contactos.proyectos 
+            if(contactos.length)
+                each contacto in contactos
+                    li Nombre
+                        p= contacto.nombre
+                    li Apellido Paterno
+                        p= contacto.apellidoPaterno
+                    li Apellido Materno 
+                        p= contacto.apellidoMaterno
+                    li Número de Telefono 
+                        p= contacto.telefono 
+                    li Correo Electronico
+                        p= contacto.correo    
 
 
-
-    //Acciones que se pueden realizar
-    .contenedor-acciones
-        a(href=`/contacto/editar/${contacto.id}` class="boton") Editar Contacto
-        button#eliminar-contacto(data-contacto-url=contacto.url type="button" class="boton eliminar") Eliminar Contacto 
+                .contenedor-acciones
+                    a(href=`/contacto/editar/${contacto.id}` class="boton editar") Editar Contacto
+                    button#eliminar-contacto(data-contacto-url=contacto.url type="button" class="boton eliminar") Eliminar Contacto 

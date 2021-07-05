@@ -6,9 +6,9 @@ block contenido
     .contenido-principal
         h1 #{nombrePagina}
 
-        pre= vardump(contacto)
+        //pre= vardump(contacto)
 
-        if errores 
+        if errores
             each error in errores
-                .alerta= error.msg
+                p.error.alerta=error.message
         +crearContacto(contacto)
